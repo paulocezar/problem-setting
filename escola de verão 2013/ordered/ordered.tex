@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,top=2.0cm,bottom=2.0cm,left=2.0cm,right=2.0cm,nohead,nofoot]{geometry}
+\usepackage[english,brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\begin{document}
+\pagestyle{empty}
+
+%----------------------------------------------------------------
+\section*{Is it ordered?}
+Chavaska likes to play with integer sequences. He has a sequence $A$ consisting of $N$ integers that he modifies and analyzes. Particularly he is interested in the ordering of some contiguous subsequences.
+
+He explained to Kabralouco how he is having fun and invited him to play. Kabralouco wants to play but as he can't think as fast as Chavaska and doesn't like to stay behind, he decided to cheat and now asks your help creating a program capable of quickly dealing with the following operations:
+
+\begin{itemize}
+\item $0\ X\ Y$ -- Swap the elements at positions X and Y.
+\item $1\ X\ Y$ -- Change the value of element at position X to Y.
+\item $2\ X\ Y$ -- Insert element Y at position X.
+\item $3\ X$ -- Remove element at position X.
+\item $4\ X\ Y$ -- Report the ordering of the elements on (the subsequence) A[X...Y].
+\begin{itemize}
+	\item ``ALL EQUAL'' -- If $A[i] = A[i+1]$ for all $i$ in $[X, Y-1]$
+	\item ``NON DECREASING'' -- If $A[i] \leq A[i+1]$ for all $i$ in $[X,Y-1]$ and $A[i] \neq A[i+1]$ for some $i$ in $[X,Y-1]$
+	\item ``NON INCREASING'' -- If $A[i] \geq A[i+1]$ for all $i$ in $[X,Y-1]$ and $A[i] \neq A[i+1]$ for some $i$ in $[X,Y-1]$
+	\item ``NONE'' -- If none of the above orderings happens.
+\end{itemize}
+\end{itemize}
+
+\subsection*{\underline{Input}}
+There might be several test cases. The first line of each test case begins with an integer $1 \leq N \leq 10^4$, the amount of numbers on the initial sequence.
+On the next line there are $N$ integers $|A_i| \leq 10^9$ ($1 \leq i \leq N$).
+The next line contains an integer $1 \leq Q \leq 10^5$, the number of operations that must be executed.
+The following $Q$ lines are the operations, and will have space separated integers as described above. 
+
+\subsection*{\underline{Output}}
+Your program should output one line for each query (``4 X Y''), answering whether the subsequence A[X...Y] is NON INCREASING, NON DECREASING, ALL EQUAL or NONE as explained above.
+
+\subsection*{\underline{Example}}
+\begin{center}\tt
+\begin{tabular}{|l|}
+\hline
+Input: \\
+\hline
+7\\
+15 6 24 48 56 6 2\\
+11\\
+4 3 5\\
+4 5 7\\
+4 1 7\\
+0 3 6\\
+4 2 5\\
+2 3 6\\
+4 2 4\\
+1 3 13\\
+4 2 4\\
+3 3\\
+4 2 4\\
+\hline
+\end{tabular}\qquad\qquad
+\begin{tabular}{|l|}
+\hline
+Output: \\
+\hline
+NON DECREASING\\
+NON INCREASING\\
+NONE\\
+NON DECREASING\\
+ALL EQUAL\\
+NONE\\
+NON DECREASING\\
+\hline
+\multicolumn{1}{c}{}\\[86pt]
+\end{tabular}
+\end{center}
+
+\end{document}
+

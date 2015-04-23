@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,top=2.0cm,bottom=2.0cm,left=2.0cm,right=2.0cm,nohead,nofoot]{geometry}
+\usepackage[english,brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\begin{document}
+\pagestyle{empty}
+
+%----------------------------------------------------------------
+\section*{Traveling Cheap}
+The road system in Linearland was very well planned. The country has $N$ cities, so the Linearland government knew that they just needed to build $N-1$ roads to guarantee that from every city you reach all the others.
+
+To maintain the road system, the government charges for each road a tax that must be paid each time someone uses the road.
+
+Simpler but as well planned as the road system of the country are the streets of the cities of Linearland. We will not get in further details but for this task you should know that in order to maintain the streets, whenever someone passes through a city a tax must be paid.
+
+Chavaska is a Travel Consultant and has many clients. Those clients frequently ask him about prices of trips, wondering how much money they would spend with taxes. Unfortunately those tax prices change very frequently, and Chavaska is having a hard time keeping up with those changes. To help him you decided to write a software that, given the existing roads between cities, the taxes charged on those roads and the taxes charged on each city, can handle the following commands:
+
+
+\begin{itemize}
+\item $0\ A\ B\ X$  (increase the tax in all roads on the simple path from $A$ to $B$ by $X$) 
+\item $1\ A\ X$ (increase the tax for city $A$ by $X$)
+\item $2\ A\ B$ (show the taxes that must be paid in the simple path between $A$ and $B$)
+\end{itemize}
+
+\subsection*{\underline{Input}}
+There might be several test cases. The first line of each test case begins with an integer $1 \leq N \leq 10^5$, the number of cities in Linearland. Cities are numbered from $0$ to $N-1$. On the next line there are $N$ integers $1 \leq a_i \leq 10000$, where $a_i$ is the tax charged in city $i$.
+Then follow $N-1$ lines, each with three space separated integers $0 \leq u,\ v \leq N-1$ and $1 \leq w \leq 10000$, meaning that there is a road between cities $u$ and $v$ and the tax for using it is $w$.
+The next line contains an integer $1 \leq Q \leq 2*10^5$, the number of commands that must be executed.
+The following $Q$ lines are the commands, and will have space separated integers accordingly to the commands described. 
+
+The increase in taxes will always be in range $[-10000,+10000]$. %Negative taxes may occur, when the roads need maintenance the government pays you for the inconvenience. 
+
+
+\subsection*{\underline{Output}}
+For each command of the type ``$2\ A\ B$'' you should print one line containing the amount of taxes that will be paid when you go from city $A$ to city $B$. 
+
+\subsection*{\underline{Example}}
+\begin{center}\tt
+ \begin{tabular}{|l|}
+\hline
+Input: \\
+\hline
+7\\
+10 13 42 1 1337 25 666\\
+3 2 6\\
+0 1 1\\
+4 6 2\\
+2 5 3\\
+4 2 11\\
+0 2 20\\
+7\\
+2 3 5 \\
+2 4 1\\
+0 1 6 11\\
+2 3 5\\
+1 5 -20\\
+2 5 3\\
+2 4 1\\
+\hline
+\end{tabular}\qquad\qquad
+ \begin{tabular}{|l|}
+\hline
+Output: \\
+\hline
+77\\ 
+1434\\ 
+77\\ 
+57\\
+1467\\
+\hline
+\multicolumn{1}{c}{}\\[145pt]
+ \end{tabular}
+\end{center}
+
+\end{document}
+

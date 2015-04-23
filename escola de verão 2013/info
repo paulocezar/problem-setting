@@ -1,0 +1,18 @@
+---
+** Awesome Odometer **
+Dificuldade: Fácil
+Solução esperada: ad hoc
+Complexidade: O(log10 N), O(min(log10 N, 65))
+
+---
+** Traveling Cheap **
+Dificuldade: Médio
+Solução esperada: heavy-light decomposition + segment tree
+Complexidade: O(N log N + Q log^2 N)
+
+---
+** Is it ordered? **
+Dificuldade: Difícil
+Solução esperada: augmented data structures, balanced BST + implicit segment tree
+Complexidade: O(N log N + Q log (N+Q)) 
+

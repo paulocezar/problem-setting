@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,top=2.0cm,bottom=2.0cm,left=2.0cm,right=2.0cm,nohead,nofoot]{geometry}
+\usepackage[english,brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\begin{document}
+\pagestyle{empty}
+
+%----------------------------------------------------------------
+\section*{Awesome Odometer}
+One day Chavaska looked at the odometer of his car while driving and noticed an interesting property: the number $N$ that appears in the odometer reads the same from left to right and from right to left. He got curious and now wants to know how many times this happened since he bought his car.
+
+Chavaska's car has a digital self adjustable odometer such that the only visible digits are the ones necessary  to show the distance traveled by the vehicle (in other words, it never shows leading zeroes) and when he bought the car the value on the odometer was zero.
+
+As a good friend you've decided to write a program able to answer Chavaska's doubt.
+
+\subsection*{\underline{Input}}
+Input consists of several test cases. Each test case is described in one line and contains the number $0 \leq N \leq 10^{10^5}$ (yes, this number can have 100000 digits!) that Chavaska currently sees in his odometer.
+
+\subsection*{\underline{Output}}
+For each test case your program should print one line containing how many times since Chavaska bought the car (and excluding the current one) the odometer showed a number that reads the same from left to right and right to left.
+
+Since this number can be quite large output it modulo $2^{32}$, that is, you need to find the remainder of the division of the answer by $2^{32}$.
+
+\subsection*{\underline{Example}}
+\begin{center}\tt
+ \begin{tabular}{|l|}
+\hline
+Input: \\
+\hline
+598895\\
+8\\
+641146\\
+66\\
+4\\
+818\\
+1881\\ 
+38483\\
+77\\
+6\\
+\hline
+\end{tabular}\qquad\qquad
+ \begin{tabular}{|l|}
+\hline
+Output: \\
+\hline
+1597\\
+8\\
+1640\\
+15\\
+4\\
+90\\
+117\\
+ 483\\
+16\\
+6\\
+\hline
+%\multicolumn{1}{c}{}\\[60pt]
+ \end{tabular}
+\end{center}
+
+\end{document}
+
